@@ -101,31 +101,32 @@
           extended[j] = finger.extended;
           fingerString += "<br>";
         }
-        if(extended[0] === false && extended[4] === false && extended[1] === extended[2] === extended[3] === true){
-          console.log("here!!");
+        if((extended[0] === extended[4] === false) && (extended[1] === extended[2] === extended[3] === true)) {
           letterString = "W<br>";
-        } else if () {
+        } else if (extended[1] === extended[2] === extended[3] === false && extended[0] === extended[4] === true) {
+          letterString = "Y<br>";
+        } else if (extended[4] === extended[2] === extended[3] === false && extended[0] === extended[1] === true) {
+          letterString = "L<br>";
+        } else if (extended[1] === extended[2] === extended[3] === extended[0] === false && extended[4] === true) {
+          letterString = "I<br>";
+        } else if (extended[4] === extended[2] === extended[3] === extended[0] === false && extended[1] === true) {
+          letterString = "D<br>";
+        } else if (extended[1] === extended[2] === extended[3] === extended[0] === true && extended[4] === false) {
+          letterString = "B<br>";
+        } else if (extended[4] === extended[2] === extended[3] === true && extended[0] === extended[1] === false) {
+          letterString = "F<br>";
+        } else if (extended[0] === extended[4] === extended[3] === false && extended[1] === extended[2] === true) {
+          if ((angle * 180 / Math.PI)<0) {
+            letterString = "R<br>";
+          } else if ((angle * 180 / Math.PI)>10) {
+            letterString = "V<br>";
+          } else {
+            letterString = "U<br>";
+          }
+        } else {
           letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } else if () {
-          letterString = "<br>";
-        } 
-    
+        }
+        
         frameString += handString;
         frameString += fingerString;
         frameString += letterString;
